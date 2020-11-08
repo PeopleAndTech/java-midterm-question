@@ -1,5 +1,12 @@
 package json.parser;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+
 public class CnnAPI {
     /*
       You can get API_KEY from this below link. Once you have the API_KEY, you can fetch the top-headlines news.
@@ -37,4 +44,14 @@ public class CnnAPI {
 	   Store into choice of your database and retrieve.
 
      */
+
+    public static void main(String[] args) throws IOException, JSONException {
+        String apiKey = "";
+        String URL = "https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=" + apiKey;
+
+        JSONObject rootObject = new JSONObject(new String(Files.readAllBytes(new File("src/json/parser/data.json").toPath())));
+
+        // continue ...
+    }
+
 }
