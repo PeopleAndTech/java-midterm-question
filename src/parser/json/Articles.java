@@ -1,4 +1,4 @@
-package json.parser;
+package parser.json;
 
 public class Articles {
     private String author;

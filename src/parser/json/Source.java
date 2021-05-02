@@ -1,4 +1,4 @@
-package json.parser;
+package parser.json;
 
 public class Source {
     private String id;

@@ -1,6 +1,6 @@
 package databases;
 
-import parser.Student;
+import parser.xml.Student;
 
 import java.io.FileInputStream;
 import java.io.IOException;
