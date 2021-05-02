@@ -47,45 +47,4 @@ public class Sort {
         return list;
     }
 
-    public int[] bubbleSort(int[] array) {
-        int[] list = array;
-        //implement here
-
-        return list;
-    }
-
-    public int[] mergeSort(int[] array) {
-        int[] list = array;
-        //implement here
-
-        return list;
-    }
-
-    public int[] quickSort(int[] array) {
-        int[] list = array;
-        //implement here
-
-        return list;
-    }
-
-    public int[] heapSort(int[] array) {
-        int[] list = array;
-        //implement here
-
-        return list;
-    }
-
-    public int[] bucketSort(int[] array) {
-        int[] list = array;
-        //implement here
-
-        return list;
-    }
-
-    public int[] shellSort(int[] array) {
-        int[] list = array;
-        //implement here
-
-        return list;
-    }
 }

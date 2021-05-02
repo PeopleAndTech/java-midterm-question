@@ -1,9 +1,9 @@
 package algorithm;
 
+import databases.ConnectToSqlDB;
+
 import java.util.List;
 import java.util.Random;
-
-import databases.ConnectToSqlDB;
 
 public class Numbers {
 
@@ -11,9 +11,7 @@ public class Numbers {
      * Show all the different kind of sorting algorithm by applying into (num array).
      * Display the execution time for each sorting.Example in below.
      *
-     * Use any databases[MongoDB, Oracle or MySql] to store data and retrieve data.
-     *
-     * At the end. After running all the sorting algo, come to a conclusion which one is suitable on given data set.
+     * Use MySql Database to store data and retrieve data.
      *
      */
 

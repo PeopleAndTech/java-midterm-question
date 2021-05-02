@@ -2,9 +2,9 @@ package databases;
 
 public class User {
 
-    String stName;
-    String stID;
-    String stDOB;
+    private String stName;
+    private String stID;
+    private String stDOB;
 
     public User() {
     }
@@ -18,7 +18,6 @@ public class User {
         this.stName = stName;
         this.stID = stID;
         this.stDOB = stDOB;
-
     }
 
     public String getStName() {

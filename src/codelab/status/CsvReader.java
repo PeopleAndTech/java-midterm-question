@@ -62,6 +62,8 @@ public class CsvReader {
             }
         }
 
+        // implement the average score of the class here
+
     }
 
 }

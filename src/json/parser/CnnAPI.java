@@ -1,11 +1,16 @@
 package json.parser;
 
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CnnAPI {
     /*
@@ -15,43 +20,44 @@ public class CnnAPI {
       Fetch This following CNN API, It will return some news in Json data. Parse this data and construct
       https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=YOUR_API_KEY
 
-      MY_API_KEY=0d9e35dfa3c140aab8bf9cdd70df957f
+	   Read the articles array and construct Headline news as
 
-      After getting Json Format of the news, You can go to json validator link: https://jsonlint.com/ to see
-      how it can be parsed.
+	   source,
+	   author,
+	   title,
+	   description,
+	   url,
+	   urlToImage,
+	   publishedAt
+	   content.
 
-      "articles": [{
-		"source": {
-			"id": "cnn",
-			"name": "CNN"
-		},
-		"author": null,
-		"title": "Who is affected by a shutdown? - CNN Video",
-		"description": "CNN's Tom Foreman breaks down who is affected by a federal government partial shutdown.",
-		"url": "http://us.cnn.com/videos/politics/2018/12/22/federal-partial-shutdown-by-the-numbers-foreman-ctn-vpx.cnn",
-		"urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/181202171029-government-shutdown-capitol-file-super-tease.jpg",
-		"publishedAt": "2018-12-23T01:09:50.8583193Z",
-		"content": "Chat with us in Facebook Messenger. Find out what's happening in the world as it unfolds."
-	   },{}]
-
-	   Read the articles array and construct Headline news as source, author, title,description,url,urlToImage,publishedAt
-	   and content. You need to design News Data Model and construct headline news.
+	   You need to design News Data Model and construct headline news.
 	   You can store in Map and then into ArrayList as your choice of Data Structure.
-
-	   You can follow How we implemented in Employee and JsonReaderUtil task.
-
-	   Show output of all the headline news in to console.
-	   Store into choice of your database and retrieve.
 
      */
 
     public static void main(String[] args) throws IOException, JSONException {
-        String apiKey = "";
+        String apiKey = "7f775a2e6f7b49a0bacf0f8e145f5465";
         String URL = "https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=" + apiKey;
 
         JSONObject rootObject = new JSONObject(new String(Files.readAllBytes(new File("src/json/parser/data.json").toPath())));
+        JSONArray array = rootObject.getJSONArray("articles");
+        List<Articles> list = new ArrayList<>();
+        for (int i = 0; i < array.length(); i++) {
+            JSONObject dataJson = array.getJSONObject(i);
+            ObjectMapper objectMapper = new ObjectMapper();
+            Articles data = null;
+            try {
+                data = objectMapper.readValue(dataJson.toString(), Articles.class);
+            } catch (JsonMappingException e) {
+                e.printStackTrace();
+            }
+            list.add(data);
+        }
 
-        // continue ...
+        //continue
+
+
     }
 
 }

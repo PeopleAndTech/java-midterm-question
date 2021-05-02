@@ -1,14 +1,13 @@
 package parser;
 
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.xml.sax.SAXException;
 
 
 public class ProcessStudentInfo {
@@ -31,7 +30,7 @@ public class ProcessStudentInfo {
      * ......................................................
      *
      *
-     * Use any databases[MongoDB, Oracle or MySql] to store data and to retrieve data.
+     * Use MySql Database to store data and to retrieve data.
      *
      */
 
