@@ -1,4 +1,4 @@
-package string.problems;
+package problems.string;
 
 public class DuplicateWord {
 

@@ -1,4 +1,4 @@
-package math.problems;
+package problems.math;
 
 public class FindMissingNumber {
 
